@@ -1,0 +1,453 @@
+/* General Styles */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: Arial, sans-serif;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+}
+
+/* General navbar styles */
+.nav-bar {
+    height: 60px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(95, 95, 95, 0.37);
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Ensures vertical alignment */
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    padding: 0 10px; /* Optional padding for horizontal spacing */
+}
+
+.name {
+    font-size: x-large;
+    font-weight: 600;
+    margin-left: 13px; /* Remove default margins */
+
+    
+}
+
+/* Links for desktop view */
+.all {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+
+.all a {
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+    transition: 0.1s;
+}
+
+.all a:hover {
+    color: rgb(240, 159, 104);
+}
+
+/* Hamburger menu icon aligned to the left */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 25px ; 
+}
+
+/* Mobile menu styles */
+.all.show {
+    display: flex;
+    position: fixed;
+    top: 7vh;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    height: auto;
+    width: 100%;
+}
+
+.all.show a {
+    margin: 6px;
+    margin-left: 22px;
+    font-weight: 400;
+    color: black;
+}
+
+.all.show a:hover {
+    color: rgb(240, 159, 104);
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .all {
+        display: none; 
+    }
+
+    .hamburger {
+        display: block;
+        margin-left: 10px; /* Optional: Fine-tune the horizontal positioning */
+    }
+}
+
+
+
+/* Home Section */
+.home {
+    margin-top: 20vh;
+    margin-bottom: 15vh;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+}
+
+.about {
+    height: auto; /* Allow dynamic height for responsive content */
+    background-color: rgb(255, 243, 237);
+    padding-top: 10vh;
+    padding: 3%; /* Add padding for better spacing */
+}
+
+/* Projects Section */
+.projects {
+    height: auto; /* Dynamic height */
+    background-color: rgb(250, 250, 250);
+    padding-top: 10vh;
+    padding: 3%;
+}
+
+/* Contact Section */
+.contact {
+    height: auto;
+    background-color: rgb(255, 243, 237);
+    padding-top: 10vh;
+    padding: 3% 3% 1% 3%
+}
+
+.home-cont{
+    display: flex;
+    flex-direction: column;
+    gap:25px 0;
+}
+.home-main {
+    padding-top: 50px;
+    display: flex;
+    flex-wrap: wrap; /* Ensure responsiveness for small screens */
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.text {
+    font-size: xx-large;
+    font-weight: 600;
+    font-style: italic;
+    color: rgb(208, 96, 32);
+    white-space: nowrap; 
+    display: inline-block; /* Keeps layout stable */
+    width: 200px; /* Reserve a consistent space for the text */
+    text-align: left; /* Optional: Align dynamic text to the left */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.full-text {
+    max-width: 600px; /* Optional: Constrain the width for better responsiveness */
+}
+
+.full-text p {
+    font-size: xx-large;
+    font-weight: 600;
+    margin: 10px 0; /* Add spacing between paragraphs */
+}
+
+.full-text p span {
+    display: inline-block; /* Keeps dynamic text in place without shifting the line */
+}
+
+.photo {
+    width: 300px;
+    height: 300px;
+    margin-top: 20px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Prevents image from shrinking on small screens */
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cv {
+    width: fit-content;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background-color: rgb(208, 96, 32);
+    
+    font-size: medium;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-left: 23%;
+    
+}
+
+/* Hover effect for the CV button */
+.cv:hover {
+    background-color: rgb(148, 58, 6);
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.cv>a,.cv-ab>a{
+    color: white;
+    text-decoration: none;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    
+    .home-main {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .photo {
+        width: 250px;
+        height: 250px; /* Scale down image for smaller screens */
+    }
+
+    .text {
+        font-size: x-large; /* Adjust dynamic text size */
+    }
+
+    .full-text p {
+        font-size: x-large;
+    }
+
+    .cv {
+        margin: 0 auto; /* Center align button for smaller screens */
+    }
+
+    
+}
+
+
+/*about*/
+
+.about{
+    align-items: center;
+
+}
+
+.about-main{
+    margin-left: 3%;
+    margin-right: 3%;
+    padding: 2%;
+
+}
+.about-main h2{
+    font-size: xx-large;
+    font-weight: 600;
+}
+.about-text{
+    font-size: larger;
+    font-weight: 400;
+}
+.cv-ab {
+    width: fit-content;
+    height: fit-content ;
+    padding: 10px 15px;
+    margin-top:10px;
+    border-radius: 10px;
+    background-color: rgb(208, 96, 32);
+    color: white;
+    font-size: medium;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    
+}
+.cv-ab:hover {
+    background-color: rgb(148, 58, 6);
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+@media (max-width: 768px) {
+    
+    .about,.projects{
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+    }
+    
+
+    
+}
+
+/* Projects Section */
+.project-main h2{
+    font-size: xx-large;
+    margin-left: 3%;
+    padding: 2%;
+
+    font-weight: 600;
+}
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.project-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.project-title {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.more {
+    margin-top: 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #007BFF;
+    cursor: pointer;
+}
+
+.more:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .project-main{
+        gap:20px 0px;
+    }
+    .nav-bar {
+        height: auto;
+        padding: 10px;
+    }
+
+    .all {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .home-main {
+        padding: 10px;
+    }
+    
+    .project-card {
+        height: auto;
+    }
+}
+
+
+.contact-info {
+    margin-left: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.contact-info h2 {
+    align-items: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    align-items: center;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.con-cont{
+    display: flex;
+    justify-content: space-between;
+    width:60%;
+
+}
+.contact-details {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px;
+}
+
+.detail {
+    display: flex; 
+    gap: 10px;
+    font-size: 1.1rem;
+}
+
+.detail a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.detail i {
+    text-decoration: none;
+    color: rgb(208, 96, 32);
+}
+
+.detail a:hover {
+    color: rgb(208, 96, 32);
+}
+
+.icon {
+    font-size: 1.5rem;
+}
+
+.footer {
+    color: white;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+
+.footer p {
+    margin: 0;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .con-cont{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width:60%;
+        gap: 20px;
+    
+    }
+    .contact{
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+    }
+}
