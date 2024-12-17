@@ -344,6 +344,11 @@ body {
     .project-main{
         gap:20px 0px;
     }
+    .project-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+    }
     .nav-bar {
         height: auto;
         padding: 10px;

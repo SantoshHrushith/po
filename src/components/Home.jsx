@@ -52,7 +52,7 @@ const Home = () => {
           </p>
         </div>
         <div className="photo">
-          <img src="img.JPG" alt="Profile" />
+          <img src={process.env.PUBLIC_URL + '/img.JPG'}  alt="Profile" />
         </div>
       </div>
       <div className='cv'><a href="SantoshHrushith_CV.pdf" download="SantoshHrushith_CV.pdf">Download CV</a></div>
