@@ -327,6 +327,10 @@ body {
     font-weight: bold;
 }
 
+.project-title>a {
+    color:black;
+    text-decoration: none;
+}
 .more {
     margin-top: 20px;
     font-size: 1rem;
