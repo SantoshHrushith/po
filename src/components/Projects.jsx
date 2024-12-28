@@ -14,14 +14,14 @@ const Projects = () => {
       <div className="project-container">
         <div className="project-card">
           <img src={p4} alt="Asset Management using MERN Stack" />
-          <div className="project-title"><a href='https://github.com/SantoshHrushith/Asset-Managment'>Asset Management using MERN Stack</a></div>
+          <div className="project-title"><a href='https://github.com/SantoshHrushith/Asset-Managment'target="_blank">Asset Management using MERN Stack</a></div>
         </div>
 
 
         <div className="project-card">
           <img src={p3} alt="Unitrade: A platform to buy and sell goods" />
           <div className="project-title">
-            <a href='https://github.com/SantoshHrushith/Unitrade'>
+            <a href='https://github.com/SantoshHrushith/Unitrade' target="_blank">
               Unitrade: A platform to buy and sell goods
             </a>
           </div>
@@ -30,7 +30,7 @@ const Projects = () => {
         <div className="project-card">
           <img src={p1} alt="Tomato Leaf Disease Detection using CNN" />
           <div className="project-title">
-            <a href='https://github.com/SantoshHrushith/Unitrade'>
+            <a href='https://github.com/SantoshHrushith/Tomato Leaf Disease Detection' target="_blank">
               Tomato Leaf Disease Detection using CNN
             </a>
           </div>
@@ -39,7 +39,7 @@ const Projects = () => {
         <div className="project-card">
           <img src={p2} alt="Email Spam Classification" />
           
-            <div className="project-title"><a href='https://github.com/SantoshHrushith/Unitrade'>Email Spam Classification</a></div>
+            <div className="project-title"><a href='https://github.com/SantoshHrushith/Spam-Classification' target="_blank">Email Spam Classification</a></div>
           
         </div>
       </div>
