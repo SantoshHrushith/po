@@ -5,7 +5,11 @@ const About = () => {
     <div className='about-main'>
       <h2>About</h2>
       <div className='about-text'>
-        <p>Hello, I'm Santosh Hrushith Yelamanchili currently pursuing an undergraduate degree in Btech Computer Science at the Indian Institute of Information and Technology (IIIT) Kottayam.</p>
+        <p>Hello, I'm <b>Santosh Hrushith Yelamanchili</b> currently pursuing an undergraduate degree in <b>Btech Computer Science</b>
+          at the <b>Indian Institute of Information and Technology (IIIT) Kottayam</b>.
+        I'm passionate about creating impactful solutions through technology, whether it's developing full-stack web applications or exploring the possibilities of machine learning.
+        
+        </p>
 
         <p><b>Education:</b> B.tech in Computer Science Engineering IIIT Kottayam(2022-2026)</p>
         <p><b>Skills:</b> C++, Python, Javascript, SQL, HTML, CSS</p>
