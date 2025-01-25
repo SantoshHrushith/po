@@ -70,8 +70,8 @@ const Projects = () => {
   };
 
   const { ref, inView } = useInView({
-    threshold: 0.2, // Adjusted threshold for better visibility
-    triggerOnce: false, // Trigger animations only once
+    threshold: 0.16, // 
+    triggerOnce: false, 
   });
 
   return (

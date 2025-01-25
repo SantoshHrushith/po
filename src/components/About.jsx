@@ -20,7 +20,7 @@ const About = () => {
         {/* About Text Animation */}
         <motion.div
           className="about-text"
-          initial={{ opacity: 0, x: -50}}
+          initial={{ opacity: 0, x: -50 }}
           animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
         >
@@ -49,6 +49,7 @@ const About = () => {
             </div>
             <div className='cv-ab'>
               <motion.a
+                ref={ref}
                 href="SantoshHrushith_CV.pdf"
                 download="SantoshHrushith_CV.pdf"
                 initial={{ opacity: 0, scale: 0.9 }}

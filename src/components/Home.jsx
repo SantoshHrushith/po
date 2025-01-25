@@ -49,14 +49,15 @@ const Home = () => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       ref={ref}
       className="home-cont"
       initial={{ opacity: 0, scale: 0.8 }}
       animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <motion.div 
+      <motion.div
+        ref={ref}
         className='home-main'
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -68,7 +69,8 @@ const Home = () => {
             And I'm a <span className="text">{text}</span>
           </h3>
         </div>
-        <motion.div 
+        <motion.div
+          ref={ref}
           className="photo"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
@@ -77,11 +79,12 @@ const Home = () => {
           <img src={process.env.PUBLIC_URL + '/img.JPG'} alt="Profile" />
         </motion.div>
       </motion.div>
-      
+
       {/* Motion Download CV Button */}
       <motion.div className='cv'>
-        <motion.a 
-          href="SantoshHrushith_CV.pdf" 
+        <motion.a
+          ref={ref}
+          href="SantoshHrushith_CV.pdf"
           download="SantoshHrushith_CV.pdf"
           whileTap={{ scale: 0.9, rotate: -2 }}
           whileHover={{ scale: 1.1 }}
