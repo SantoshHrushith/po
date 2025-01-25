@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const Home = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -9,7 +10,14 @@ const Home = () => {
   const [delta, setDelta] = useState(100);
   const period = 1000;
 
+  const { ref, inView } = useInView({
+    threshold: 0.3,
+    triggerOnce: false,
+  });
+
   useEffect(() => {
+    if (!inView) return;
+
     let ticker = setInterval(() => {
       tick();
     }, delta);
@@ -17,7 +25,7 @@ const Home = () => {
     return () => {
       clearInterval(ticker);
     };
-  }, [text, delta]);
+  }, [text, delta, inView]);
 
   const tick = () => {
     const i = loopNum % toRotate.length;
@@ -29,35 +37,61 @@ const Home = () => {
     setText(updatedText);
 
     if (!isDeleting && updatedText === fullText) {
-      // Pause when the word is fully displayed
       setIsDeleting(true);
-      setDelta(period); // Set a delay for the pause
+      setDelta(period);
     } else if (isDeleting && updatedText === '') {
-      // Pause when the word is fully deleted
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
-      setDelta(500); // Set a short delay to start typing the next word
+      setDelta(500);
     } else {
-      setDelta(100); // Normal typing/deleting speed
+      setDelta(100);
     }
   };
 
   return (
-    <div className="home-cont">
-      <div className='home-main'>
+    <motion.div 
+      ref={ref}
+      className="home-cont"
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      <motion.div 
+        className='home-main'
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
         <div className="full-text">
-          <p>Hello there, I'm Santosh Hrushith Y</p>
-          <p>
+          <h3>Hello there, I'm Santosh Hrushith Y</h3>
+          <h3>
             And I'm a <span className="text">{text}</span>
-          </p>
+          </h3>
         </div>
-        <div className="photo">
-          <img src={process.env.PUBLIC_URL + '/img.JPG'}  alt="Profile" />
-        </div>
-      </div>
-      <div className='cv'><a href="SantoshHrushith_CV.pdf" download="SantoshHrushith_CV.pdf">Download CV</a></div>
-    </div>
-
+        <motion.div 
+          className="photo"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          <img src={process.env.PUBLIC_URL + '/img.JPG'} alt="Profile" />
+        </motion.div>
+      </motion.div>
+      
+      {/* Motion Download CV Button */}
+      <motion.div className='cv'>
+        <motion.a 
+          href="SantoshHrushith_CV.pdf" 
+          download="SantoshHrushith_CV.pdf"
+          whileTap={{ scale: 0.9, rotate: -2 }}
+          whileHover={{ scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          className="download-btn"
+        >
+          Download CV
+        </motion.a>
+      </motion.div>
+    </motion.div>
   );
 };
 
