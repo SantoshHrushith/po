@@ -63,7 +63,7 @@ const Home = () => {
         transition={{ duration: 1, ease: "easeOut" }}
       >
         <div className="full-text">
-          <h3>Hello there, I'm Santosh Hrushith Y</h3>
+          <h3>Hello there, I'm Santosh Hrushith</h3>
           <h3>
             And I'm a <span className="text">{text}</span>
           </h3>

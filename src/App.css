@@ -211,7 +211,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .full-text p span {
     display: inline-block;
-    /* Keeps dynamic text in place without shifting the line */
 }
 
 .photo {
