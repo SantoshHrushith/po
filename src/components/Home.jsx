@@ -84,7 +84,7 @@ const Home = () => {
       <motion.div className='cv'>
         <motion.a
           ref={ref}
-          href="SantoshHrushith_CV.pdf"
+          href="Santosh_Hrushith_Resume_SDE.pdf"
           download="SantoshHrushith_CV.pdf"
           whileTap={{ scale: 0.9, rotate: -2 }}
           whileHover={{ scale: 1.1 }}

@@ -454,6 +454,69 @@ h1, h2, h3, h4, h5, h6 {
     gap: 20px;
 }
 
+/* Ensure links inside the project description are inline and spaced */
+.project-desc .project-links {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* default style for links inside the description */
+.project-desc .project-links a {
+    display: inline-block;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 6px 8px;
+    border-radius: 6px;
+    background: transparent;
+    line-height: 1;
+}
+
+/* Live Demo appears as a compact button beside GitHub link */
+.project-desc .project-links a.live-demo {
+    background: rgb(208, 96, 32);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+/* Hover effects limited to each individual link */
+.project-desc .project-links a:hover {
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+
+.project-desc .project-links a.live-demo:hover {
+    background: rgb(148, 58, 6);
+    color: #fff;
+}
+
+/* Replace the legacy absolute-positioning that caused the overlay
+   with a scoped static rule so links in the modal flow inline. */
+.project-detail a {
+    position: static;
+    bottom: auto;
+    right: auto;
+    display: inline-block;
+    vertical-align: middle;
+    z-index: auto;
+}
+
+/* Responsive fallback: stack links on small screens */
+@media (max-width: 768px) {
+    .project-desc .project-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project-desc .project-links a {
+        margin-bottom: 8px;
+    }
+}
+
 .project-detail-img h4 {
     padding-top: 15px;
     text-align: center;
@@ -570,9 +633,12 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.1rem;
     color: #007bff;
     text-decoration: none;
-    position: absolute; /* Position it absolutely within its parent */
-    bottom: 30px; /* 10px from the bottom of the container */
-    right: 30px; /* 10px from the right of the container */
+    position: static;
+    /* Position it absolutely within its parent */
+    bottom: auto;
+    /* 10px from the bottom of the container */
+    right: auto;
+    /* 10px from the right of the container */
   }
   
 
@@ -742,5 +808,116 @@ h1, h2, h3, h4, h5, h6 {
     .contact {
         padding-top: 5vh;
         padding-bottom: 5vh;
+    }
+}
+
+/* Experience timeline */
+.experience-timeline {
+    position: relative;
+    padding: 2rem 0;
+    margin-top: 1rem;
+}
+
+/* center vertical line */
+.experience-timeline .timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(208,96,32,0.15);
+    transform: translateX(-50%);
+}
+
+/* timeline item (shared) */
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+}
+
+/* left / right placement */
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+/* content box */
+.timeline-content {
+    display: inline-block;
+    max-width: 1000px;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* dot on the line */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 1.25rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgb(208,96,32);
+    box-shadow: 0 0 0 4px rgba(208,96,32,0.12);
+}
+.points{
+    text-align: left;
+    font-size:large;
+}
+/* position dot to the center line */
+.timeline-item.left::before {
+    right: -7px; /* sits on the center line */
+}
+
+.timeline-item.right::before {
+    left: -7px;
+}
+
+/* small muted text style */
+.timeline-content .muted {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0.25rem 0 0.5rem;
+}
+
+/* Responsive: stack items and move line to left for small screens */
+@media (max-width: 768px) {
+    .experience-timeline .timeline-line {
+        left: 20px;
+        transform: none;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 3.5rem;
+        padding-right: 1rem;
+        text-align: left;
+        margin-bottom: 1.25rem;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        left: 0;
+    }
+
+    .timeline-item::before {
+        left: 20px;
+        right: auto;
+        top: 1.25rem;
+    }
+
+    .timeline-content {
+        display: block;
+        margin-left: 0.75rem;
+        max-width: calc(100% - 3.5rem);
     }
 }

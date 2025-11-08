@@ -58,7 +58,7 @@ const Contact = () => {
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.6 }}
         >
-          <a href="SantoshHrushith_CV.pdf" download="SantoshHrushith_CV.pdf">Download CV</a>
+          <a href="Santosh_Hrushith_Resume_SDE.pdf" download="SantoshHrushith_CV.pdf">Download CV</a>
         </motion.div>
       </div>
 
